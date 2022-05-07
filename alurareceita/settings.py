@@ -19,8 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-from secrets import *
-SECRET_KEY = 'django-insecure-9ir%kjw$tdmcy+b&=5my7z#3_r&qww*f^1w4gpoimr+98r!5xs'
+from secretse import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -75,8 +74,11 @@ WSGI_APPLICATION = 'alurareceita.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'receitasdb',
+        'USER': pg_user,
+        'PASSWORD': pg_pass,
+        'HOST': 'localhost'
     }
 }
 
